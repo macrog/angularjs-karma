@@ -1,6 +1,11 @@
 angular.module('pie', [])
 .controller('PieController', ['$scope', function ($scope) {
 
+    //Listeners
+    $scope.$on('pieHasBeenDepleted', function () {
+        $scope.warning = 'RED ALERT';
+        $scope.slices = 0;
+    });
     //Watchers
     function compareAndWarn(newVal, oldVal){
         var props = [];

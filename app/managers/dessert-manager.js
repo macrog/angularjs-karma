@@ -8,10 +8,17 @@ angular.module('desserts',[]).value('DessertValues', {
 
 angular.module('desserts').factory('DessertManager', ['DessertValues', function (dessertValue) {
     return{
-      pieFlavors: function () {
+        pieFlavors: function () {
           return dessertValue.pies.map(function (pie) {
               return pie.flavor;
           });
-      }
+        },
+        mode:function (mode) {
+            if(mode){
+                return "pie"
+            }else{
+                return null;
+            }
+        }
     };
 }])
